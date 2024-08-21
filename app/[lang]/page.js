@@ -1,8 +1,12 @@
 import { getDictionary } from "./dictionaries/dictionaries";
 
-export default async function Homepage({ params: { lang } }) {
+
+export default async function Contact({ params: { lang } }) {
     const dict = await getDictionary(lang);
 
-    return <div>{dict.hello}</div>;
+    return (
+        <div className="p-20">
+            <h1 className="text-2xl">{dict.hello}</h1>
+        </div>
+    );
 }
-

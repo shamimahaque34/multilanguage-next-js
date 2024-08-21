@@ -6,14 +6,15 @@ import { useRouter } from 'next/navigation'
 
    export default function Navbar({lang}){
     const pathname = usePathname()
+    console.log(pathname);
     const router = useRouter()
 
 
     const handleLanguageChange = (e) =>{
       const newLocale =e.target.value;
-      console.log (newLocale);
+     
       const path = pathname.split("/").slice(2).join("/");
-      console.log(path);
+      
       router.push(`/${newLocale}/${path}`);
     }
 
@@ -21,15 +22,15 @@ import { useRouter } from 'next/navigation'
     return(
 
       
-      <div className='d-flex gap-6'>
+      <div className='d-flex'>
         <div>
         <nav>
-      <Link className= {`link  ${pathname === '/' ? 'active bg-cyan-200' : ''}`} href={`/${lang}/`}>
+      <Link className= {`link  ${pathname === `/${lang}` ? 'active bg-cyan-200' : ''}`} href={`/${lang}/`}>
         Home
       </Link>
  
       <Link
-        className={`link mx-5 ${pathname === '/about' ? 'active bg-cyan-200' : ''}`}
+        className={`link mx-5 ${pathname === `/${lang}/about` ? 'active bg-cyan-200' : ''}`}
         href={`/${lang}/about`}
       >
         About
@@ -37,7 +38,7 @@ import { useRouter } from 'next/navigation'
 
 
       <Link
-        className={`link mx-5 ${pathname === '/contact' ? 'active bg-cyan-200' : ''}`}
+        className={`link mx-5 ${pathname === `/${lang}/contact` ? 'active bg-cyan-200' : ''}`}
         href={`/${lang}/contact`}
       >
         Contact
