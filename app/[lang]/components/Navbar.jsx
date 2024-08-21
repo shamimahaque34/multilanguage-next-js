@@ -20,10 +20,11 @@ import { useRouter } from 'next/navigation'
     
     return(
 
-      <>
+      
       <div className='d-flex gap-6'>
+        <div>
         <nav>
-      <Link className= {`link  ${pathname === `/${lang}/` ? 'active bg-cyan-200' : ''}`} href={`/${lang}/`}>
+      <Link className= {`link  ${pathname === '/' ? 'active bg-cyan-200' : ''}`} href={`/${lang}/`}>
         Home
       </Link>
  
@@ -49,6 +50,8 @@ Home
 
     </nav>
 
+    </div>
+
     <div>
     <select value={lang} onChange={handleLanguageChange}>
       <option value="en">EN</option>
@@ -60,7 +63,7 @@ Home
 
     </div>
     
-    </>
+   
 
         
     )
