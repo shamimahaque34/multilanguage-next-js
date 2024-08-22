@@ -22,9 +22,9 @@ import { useRouter } from 'next/navigation'
     return(
 
       
-      <div className='d-flex'>
-        <div>
-        <nav>
+      <div className='flex justify-between'>
+       
+        <nav className=''>
       <Link className= {`link  ${pathname === `/${lang}` ? 'active bg-cyan-200' : ''}`} href={`/${lang}/`}>
         Home
       </Link>
@@ -51,15 +51,15 @@ Home
 
     </nav>
 
-    </div>
+    
 
-    <div>
-    <select value={lang} onChange={handleLanguageChange}>
-      <option value="en">EN</option>
+  
+    <select className="bg-red-600" value={lang} onChange={handleLanguageChange}>
+      <option   value="en">EN</option>
       <option value="bn">BN</option>
     </select>
 
-    </div>
+   
 
 
     </div>
